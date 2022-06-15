@@ -52,6 +52,7 @@ class FavoriteTeamDetailsPageView extends StatelessWidget {
             },
             separatorBuilder: (_, __) => SizedBox(height: 12.h),
           ),
+          SizedBox(height: 32.h),
         ],
       ),
     );

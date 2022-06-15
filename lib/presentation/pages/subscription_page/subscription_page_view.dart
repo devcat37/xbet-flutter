@@ -8,10 +8,57 @@ import 'package:xbet_1/internal/utils/infrastructure.dart';
 class SubscriptionPageView extends StatelessWidget {
   const SubscriptionPageView({Key? key}) : super(key: key);
 
+  Widget _buildPlates(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Expanded(
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: GestureDetector(
+                onTap: () {},
+                child: Text(
+                  'Terms of Use',
+                  style: TextStyle(fontSize: 12.w, fontWeight: FontWeight.w500, color: whiteColor),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Center(
+              child: GestureDetector(
+                onTap: () {},
+                child: Text(
+                  'Restore',
+                  style: TextStyle(fontSize: 12.w, fontWeight: FontWeight.w500, color: whiteColor),
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Align(
+              alignment: Alignment.centerRight,
+              child: GestureDetector(
+                onTap: () {},
+                child: Text(
+                  'Privacy Policy',
+                  style: TextStyle(fontSize: 12.w, fontWeight: FontWeight.w500, color: whiteColor),
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
   Widget _buildBuyPremiumButton(BuildContext context) {
     return InkWell(
       onTap: () {
         service<SubscriptionState>().isSubscribed = true;
+
         pop(context);
       },
       borderRadius: borderRadius16,
@@ -52,23 +99,25 @@ class SubscriptionPageView extends StatelessWidget {
           ),
           Text(
             'Ads removing'.toUpperCase(),
-            style: TextStyle(color: whiteColor, fontWeight: FontWeight.bold, fontSize: 20.w),
+            style: TextStyle(color: whiteColor, fontWeight: FontWeight.bold, fontSize: 20.w, fontFamily: 'Montserrat'),
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 16.h),
           Text(
             'Option to add photos to your teams'.toUpperCase(),
-            style: TextStyle(color: whiteColor, fontWeight: FontWeight.bold, fontSize: 20.w),
+            style: TextStyle(color: whiteColor, fontWeight: FontWeight.bold, fontSize: 20.w, fontFamily: 'Montserrat'),
             textAlign: TextAlign.center,
           ),
           SizedBox(height: 16.h),
           Text(
             'Unlimited teams creating'.toUpperCase(),
-            style: TextStyle(color: whiteColor, fontWeight: FontWeight.bold, fontSize: 20.w),
+            style: TextStyle(color: whiteColor, fontWeight: FontWeight.bold, fontSize: 20.w, fontFamily: 'Montserrat'),
             textAlign: TextAlign.center,
           ),
           const Spacer(),
           _buildBuyPremiumButton(context),
+          SizedBox(height: 32.h),
+          _buildPlates(context),
           SizedBox(height: 16.h),
         ],
       ),

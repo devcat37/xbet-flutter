@@ -163,6 +163,7 @@ class TeamDetailsPageView extends StatelessWidget {
           _buildStandings(context),
           SizedBox(height: 24.h),
           _buildSquad(context),
+          SizedBox(height: 24.h),
         ],
       ),
     );

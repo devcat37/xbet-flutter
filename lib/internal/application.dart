@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:xbet_1/domain/models/team/team.dart';
 import 'package:xbet_1/internal/pages/create_team_page/create_team_page.dart';
@@ -15,6 +16,8 @@ class Application extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
     return ScreenUtilInit(
       designSize: const Size(375, 812),
       builder: (context, _) => MaterialApp(

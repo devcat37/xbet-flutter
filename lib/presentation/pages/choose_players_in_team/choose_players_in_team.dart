@@ -120,6 +120,7 @@ class _ChoosePlayersInTeamState extends State<ChoosePlayersInTeam> {
           _buildTeamInformation(context),
           SizedBox(height: 24.h),
           _buildPlayers(context),
+          SizedBox(height: 128.h),
         ],
       ),
     );
@@ -171,7 +172,7 @@ class _ChoosePlayersInTeamState extends State<ChoosePlayersInTeam> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Players choosing'),
+        title: const Text('Players choosing'),
         backgroundColor: backgroundColor,
         elevation: 0,
         actions: [

@@ -32,7 +32,10 @@ class FavoriteTeamsPageView extends StatelessWidget {
                 ),
                 CupertinoDialogAction(
                   child: const Text('Buy'),
-                  onPressed: () => pop(context),
+                  onPressed: () {
+                    subscriptionState.isSubscribed = true;
+                    pop(context);
+                  },
                 ),
               ],
             ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:xbet_1/data/repository/players_repository.dart';
 import 'package:xbet_1/data/repository/teams_repository.dart';
 import 'package:xbet_1/internal/application.dart';
+import 'package:xbet_1/internal/services/helpers.dart';
 import 'package:xbet_1/internal/services/service_locator.dart';
 import 'package:xbet_1/internal/services/settings.dart';
 import 'package:xbet_1/internal/states/favorite_teams_state/favorite_teams_state.dart';
@@ -16,6 +17,7 @@ Future<void> main() async {
   final Settings settings = Settings();
   await settings.initFirebase();
   await settings.initStorage();
+  await rateMyApp.init();
   service.registerSingleton(settings);
 
   // Repositories.

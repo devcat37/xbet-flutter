@@ -86,7 +86,11 @@ class CreateTeamPageView extends StatelessWidget {
     return InkWell(
       onTap: () {
         Navigator.of(context).push(
-          MaterialPageRoute(builder: (context) => ChoosePlayersPageView()),
+          MaterialPageRoute(
+            builder: (context) => ChoosePlayersPageView(
+              chosenPlayers: state.chosenPlayers,
+            ),
+          ),
         );
       },
       borderRadius: borderRadius16,
@@ -108,26 +112,29 @@ class CreateTeamPageView extends StatelessWidget {
   }
 
   Widget _buildPhoto(BuildContext context) {
-    return Stack(
-      children: [
-        Image.memory(
-          state.file,
-          height: 120.h,
-          width: 120.h,
-          fit: BoxFit.cover,
-        ),
-        Positioned(
-          right: 6.r,
-          top: 6.r,
-          child: GestureDetector(
-            onTap: () => state.deletePhoto(),
-            child: Icon(
-              Icons.close,
-              color: whiteColor,
-            ),
+    return GestureDetector(
+      onTap: () => state.choosePhoto(),
+      child: Stack(
+        children: [
+          Image.memory(
+            state.file,
+            height: 120.h,
+            width: 120.h,
+            fit: BoxFit.cover,
           ),
-        )
-      ],
+          Positioned(
+            right: 6.r,
+            top: 6.r,
+            child: GestureDetector(
+              onTap: () => state.deletePhoto(),
+              child: Icon(
+                Icons.close,
+                color: whiteColor,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 

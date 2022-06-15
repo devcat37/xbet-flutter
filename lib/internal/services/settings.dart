@@ -5,7 +5,7 @@ import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:xbet_1/domain/models/favorite_team/favorite_team.dart';
 
 class Settings {
-  static const String appName = '';
+  static const String appName = '1xBet Football Clubs';
 
   /// Зашифрованное хранилище локальных данных.
   late FlutterSecureStorage _storage;

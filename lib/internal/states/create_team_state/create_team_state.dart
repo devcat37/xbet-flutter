@@ -5,7 +5,6 @@ import 'package:file_picker_cross/file_picker_cross.dart';
 import 'package:mobx/mobx.dart';
 import 'package:xbet_1/domain/models/favorite_team/favorite_team.dart';
 import 'package:xbet_1/domain/models/player/player.dart';
-import 'package:xbet_1/domain/models/team/team.dart';
 import 'package:xbet_1/internal/services/service_locator.dart';
 import 'package:xbet_1/internal/states/favorite_teams_state/favorite_teams_state.dart';
 
@@ -18,13 +17,13 @@ abstract class _CreateTeamStateBase with Store {
   String teamName = '';
 
   @observable
-  ObservableMap<String, List<Player>> _players = ObservableMap();
+  ObservableMap<String, List<Player>> chosenPlayers = ObservableMap();
 
   @computed
   List<Player> get players {
     List<Player> pls = [];
 
-    for (List<Player> pl in _players.values) {
+    for (List<Player> pl in chosenPlayers.values) {
       pls.addAll(pl);
     }
 
@@ -59,8 +58,8 @@ abstract class _CreateTeamStateBase with Store {
     teamName = name;
   }
 
-  void setTeamPlayers(Team team, List<Player> players) {
-    _players[team.id] = players;
+  void setTeamPlayers(String team, List<Player> players) {
+    chosenPlayers[team] = players;
   }
 
   void deletePhoto() {

@@ -33,19 +33,19 @@ mixin _$CreateTeamState on _CreateTeamStateBase, Store {
     });
   }
 
-  late final _$_playersAtom =
-      Atom(name: '_CreateTeamStateBase._players', context: context);
+  late final _$chosenPlayersAtom =
+      Atom(name: '_CreateTeamStateBase.chosenPlayers', context: context);
 
   @override
-  ObservableMap<String, List<Player>> get _players {
-    _$_playersAtom.reportRead();
-    return super._players;
+  ObservableMap<String, List<Player>> get chosenPlayers {
+    _$chosenPlayersAtom.reportRead();
+    return super.chosenPlayers;
   }
 
   @override
-  set _players(ObservableMap<String, List<Player>> value) {
-    _$_playersAtom.reportWrite(value, super._players, () {
-      super._players = value;
+  set chosenPlayers(ObservableMap<String, List<Player>> value) {
+    _$chosenPlayersAtom.reportWrite(value, super.chosenPlayers, () {
+      super.chosenPlayers = value;
     });
   }
 
@@ -69,6 +69,7 @@ mixin _$CreateTeamState on _CreateTeamStateBase, Store {
   String toString() {
     return '''
 teamName: ${teamName},
+chosenPlayers: ${chosenPlayers},
 file: ${file},
 players: ${players}
     ''';

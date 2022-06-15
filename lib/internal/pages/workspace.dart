@@ -58,13 +58,23 @@ class _WorkspaceState extends State<Workspace> {
   }
 
   Widget _buildBottomNavigationBar(BuildContext context) {
-    return BottomNavigationBar(
-      type: BottomNavigationBarType.fixed,
-      elevation: 0,
-      currentIndex: _currentPage,
-      backgroundColor: backgroundColor,
-      items: _itemToPage(context).keys.toList(),
-      onTap: (page) => _pageController.jumpToPage(page),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.end,
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Divider(height: 1.0, thickness: 1.0, color: whiteColor.withOpacity(0.5)),
+        SizedBox(
+          height: 100.h,
+          child: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            elevation: 0,
+            currentIndex: _currentPage,
+            backgroundColor: backgroundColor,
+            items: _itemToPage(context).keys.toList(),
+            onTap: (page) => _pageController.jumpToPage(page),
+          ),
+        ),
+      ],
     );
   }
 

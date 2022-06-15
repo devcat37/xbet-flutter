@@ -12,7 +12,7 @@ class FootballTeamsPageView extends StatelessWidget {
 
   Widget _buildContent(BuildContext context) {
     return ListView.separated(
-      padding: EdgeInsets.symmetric(vertical: 16.h, horizontal: 16.w),
+      padding: EdgeInsets.only(top: 16.h, bottom: 32.h, left: 16.w, right: 16.w),
       itemCount: state.teams.length,
       itemBuilder: (context, index) => TeamWrapper(team: state.teams.elementAt(index)),
       separatorBuilder: (_, __) => SizedBox(height: 12.h),

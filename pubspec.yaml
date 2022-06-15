@@ -102,6 +102,15 @@ flutter:
         - asset: fonts/SfProDisplay/SfProDisplay-Bold.otf
           weight: 700  
 
+    - family: Montserrat
+      fonts:
+        - asset: fonts/Montserrat/Montserrat-Regular.ttf
+          weight: 400
+        - asset: fonts/Montserrat/Montserrat-Medium.ttf
+          weight: 500
+        - asset: fonts/Montserrat/Montserrat-Bold.ttf
+          weight: 700        
+
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

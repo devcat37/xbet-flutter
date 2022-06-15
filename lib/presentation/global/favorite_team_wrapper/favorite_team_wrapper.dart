@@ -45,14 +45,19 @@ class FavoriteTeamWrapper extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Row(
-              children: [
-                _buildImage(context),
-                Text(
-                  team.title,
-                  style: TextStyle(fontSize: 16.w, fontWeight: FontWeight.w500, color: whiteColor),
-                ),
-              ],
+            Expanded(
+              child: Row(
+                children: [
+                  _buildImage(context),
+                  Flexible(
+                    child: Text(
+                      team.title,
+                      style: TextStyle(fontSize: 16.w, fontWeight: FontWeight.w500, color: whiteColor),
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                ],
+              ),
             ),
             GestureDetector(
               onTap: () => showCupertinoDialog(

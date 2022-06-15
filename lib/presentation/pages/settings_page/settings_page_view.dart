@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:xbet_1/internal/services/app_redirects.dart';
+import 'package:xbet_1/internal/services/helpers.dart';
 import 'package:xbet_1/internal/services/service_locator.dart';
 import 'package:xbet_1/internal/states/subscription_state/subscription_state.dart';
 import 'package:xbet_1/internal/utils/infrastructure.dart';
@@ -64,7 +65,12 @@ class SettingsPageView extends StatelessWidget {
             children: [
               _buildButton(context, image: BetIcons.privacy, title: 'Privacy Policy', onPressed: () {}),
               _buildButton(context, image: BetIcons.terms, title: 'Terms of Use', onPressed: () {}),
-              _buildButton(context, image: BetIcons.rate, title: 'Rate app', onPressed: () {}),
+              _buildButton(
+                context,
+                image: BetIcons.rate,
+                title: 'Rate app',
+                onPressed: () => rateMyApp.showRateDialog(context),
+              ),
               _buildButton(context, image: BetIcons.support, title: 'Support', onPressed: () {}),
             ],
           ),

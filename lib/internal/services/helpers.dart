@@ -1,3 +1,5 @@
+import 'package:rate_my_app/rate_my_app.dart';
+
 const countryCodes = {
   "ad": "Andorra",
   "ae": "United Arab Emirates",
@@ -310,3 +312,10 @@ const countryCodes = {
 String countryCodeFromCountry(String country) =>
     countryCodes.keys.firstWhere((element) => countryCodes[element]?.toLowerCase() == country.toLowerCase(),
         orElse: () => countryCodes.keys.first);
+
+RateMyApp rateMyApp = RateMyApp(
+  preferencesPrefix: 'rateMyApp_',
+  minDays: 0, // Show rate popup on first day of install.
+  minLaunches: 50, // Show rate popup after 5 launches of app after minDays is passed.
+  appStoreIdentifier: '1588554686',
+);
