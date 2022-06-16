@@ -44,6 +44,7 @@ dependencies:
   rate_my_app: ^1.1.2
   mobx: ^2.0.3  
   json_annotation: ^4.5.0
+  url_launcher: ^6.0.12
 
 
   # The following adds the Cupertino Icons font to your application.

@@ -23,6 +23,7 @@ class PlayerWrapper extends StatelessWidget {
       imageUrl: player.image,
       height: 48.h,
       width: 37.w,
+      errorWidget: (_, __, ___) => SizedBox(height: 48.h, width: 37.w),
     );
   }
 

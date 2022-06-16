@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:xbet_1/internal/services/app_redirects.dart';
+import 'package:xbet_1/internal/services/helpers.dart';
 import 'package:xbet_1/internal/services/service_locator.dart';
 import 'package:xbet_1/internal/states/subscription_state/subscription_state.dart';
 import 'package:xbet_1/internal/utils/infrastructure.dart';
@@ -18,7 +19,7 @@ class SubscriptionPageView extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerLeft,
               child: GestureDetector(
-                onTap: () {},
+                onTap: () => openTerms(),
                 child: Text(
                   'Terms of Use',
                   style: TextStyle(fontSize: 12.w, fontWeight: FontWeight.w500, color: whiteColor),
@@ -29,7 +30,10 @@ class SubscriptionPageView extends StatelessWidget {
           Expanded(
             child: Center(
               child: GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  service<SubscriptionState>().isSubscribed = true;
+                  pop(context);
+                },
                 child: Text(
                   'Restore',
                   style: TextStyle(fontSize: 12.w, fontWeight: FontWeight.w500, color: whiteColor),
@@ -41,7 +45,7 @@ class SubscriptionPageView extends StatelessWidget {
             child: Align(
               alignment: Alignment.centerRight,
               child: GestureDetector(
-                onTap: () {},
+                onTap: () => openPrivacy(),
                 child: Text(
                   'Privacy Policy',
                   style: TextStyle(fontSize: 12.w, fontWeight: FontWeight.w500, color: whiteColor),

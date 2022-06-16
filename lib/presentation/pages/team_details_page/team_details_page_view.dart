@@ -111,6 +111,7 @@ class TeamDetailsPageView extends StatelessWidget {
               height: 80.r,
               width: 80.r,
               fit: BoxFit.contain,
+              errorWidget: (_, __, ___) => SizedBox(height: 80.r, width: 80.r),
             ),
             SizedBox(width: 12.w),
             Column(

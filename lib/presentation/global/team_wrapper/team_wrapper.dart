@@ -21,7 +21,11 @@ class TeamWrapper extends StatelessWidget {
   Widget _buildContent(BuildContext context) {
     return Row(
       children: [
-        CachedNetworkImage(imageUrl: team.image, height: 32.r),
+        CachedNetworkImage(
+          imageUrl: team.image,
+          height: 32.r,
+          errorWidget: (_, __, ___) => SizedBox(height: 32.r, width: 32.r),
+        ),
         SizedBox(width: 12.w),
         Text(
           team.name,

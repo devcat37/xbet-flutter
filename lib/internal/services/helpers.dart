@@ -1,4 +1,5 @@
 import 'package:rate_my_app/rate_my_app.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 const countryCodes = {
   "ad": "Andorra",
@@ -319,3 +320,15 @@ RateMyApp rateMyApp = RateMyApp(
   minLaunches: 50, // Show rate popup after 5 launches of app after minDays is passed.
   appStoreIdentifier: '1588554686',
 );
+
+void openPrivacy() async => await launchUrl(
+      Uri.parse('https://google.com'),
+    );
+
+void openTerms() async => await launchUrl(
+      Uri.parse('https://google.com'),
+    );
+
+void openSupport() async => await launchUrl(
+      Uri.parse('https://google.com'),
+    );

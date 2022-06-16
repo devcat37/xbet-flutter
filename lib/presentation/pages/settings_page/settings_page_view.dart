@@ -63,15 +63,30 @@ class SettingsPageView extends StatelessWidget {
               mainAxisExtent: 87.h,
             ),
             children: [
-              _buildButton(context, image: BetIcons.privacy, title: 'Privacy Policy', onPressed: () {}),
-              _buildButton(context, image: BetIcons.terms, title: 'Terms of Use', onPressed: () {}),
+              _buildButton(
+                context,
+                image: BetIcons.privacy,
+                title: 'Privacy Policy',
+                onPressed: () => openPrivacy(),
+              ),
+              _buildButton(
+                context,
+                image: BetIcons.terms,
+                title: 'Terms of Use',
+                onPressed: () => openTerms(),
+              ),
               _buildButton(
                 context,
                 image: BetIcons.rate,
                 title: 'Rate app',
                 onPressed: () => rateMyApp.showRateDialog(context),
               ),
-              _buildButton(context, image: BetIcons.support, title: 'Support', onPressed: () {}),
+              _buildButton(
+                context,
+                image: BetIcons.support,
+                title: 'Support',
+                onPressed: () => openSupport(),
+              ),
             ],
           ),
         ],
