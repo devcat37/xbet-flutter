@@ -5,6 +5,7 @@ import 'package:xbet_1/internal/services/helpers.dart';
 import 'package:xbet_1/internal/services/service_locator.dart';
 import 'package:xbet_1/internal/states/subscription_state/subscription_state.dart';
 import 'package:xbet_1/internal/utils/infrastructure.dart';
+import 'package:xbet_1/main.dart';
 
 class SubscriptionPageView extends StatelessWidget {
   const SubscriptionPageView({Key? key}) : super(key: key);
@@ -30,9 +31,9 @@ class SubscriptionPageView extends StatelessWidget {
           Expanded(
             child: Center(
               child: GestureDetector(
-                onTap: () {
-                  service<SubscriptionState>().isSubscribed = true;
-                  pop(context);
+                onTap: () async {
+                  final res = await restore();
+                  if (res) pop(context);
                 },
                 child: Text(
                   'Restore',
@@ -60,10 +61,9 @@ class SubscriptionPageView extends StatelessWidget {
 
   Widget _buildBuyPremiumButton(BuildContext context) {
     return InkWell(
-      onTap: () {
-        service<SubscriptionState>().isSubscribed = true;
-
-        pop(context);
+      onTap: () async {
+        final res = await purchase();
+        if (res) pop(context);
       },
       borderRadius: borderRadius16,
       child: Ink(

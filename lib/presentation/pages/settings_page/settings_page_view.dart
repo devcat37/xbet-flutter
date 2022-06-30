@@ -6,6 +6,7 @@ import 'package:xbet_1/internal/services/helpers.dart';
 import 'package:xbet_1/internal/services/service_locator.dart';
 import 'package:xbet_1/internal/states/subscription_state/subscription_state.dart';
 import 'package:xbet_1/internal/utils/infrastructure.dart';
+import 'package:xbet_1/main.dart';
 import 'package:xbet_1/presentation/global/icons/bet_icons.dart';
 import 'package:xbet_1/presentation/global/logo_app_bar/logo_app_bar.dart';
 
@@ -44,7 +45,7 @@ class SettingsPageView extends StatelessWidget {
       padding: EdgeInsets.all(16.w),
       child: Column(
         children: [
-          if (!service<SubscriptionState>().isSubscribed) ...[
+          if (!subscribed) ...[
             _buildButton(
               context,
               image: BetIcons.premium,

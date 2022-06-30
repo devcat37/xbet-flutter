@@ -9,6 +9,7 @@ import 'package:xbet_1/internal/services/app_redirects.dart';
 import 'package:xbet_1/internal/services/service_locator.dart';
 import 'package:xbet_1/internal/states/subscription_state/subscription_state.dart';
 import 'package:xbet_1/internal/utils/infrastructure.dart';
+import 'package:xbet_1/main.dart';
 import 'package:xbet_1/presentation/global/icons/bet_icons.dart';
 
 class Workspace extends StatefulWidget {
@@ -29,7 +30,7 @@ class _WorkspaceState extends State<Workspace> {
   @override
   void initState() {
     SchedulerBinding.instance?.addPostFrameCallback((_) {
-      if (!service<SubscriptionState>().isSubscribed) {
+      if (!subscribed) {
         goToSubscriptionPage(context);
       }
     });

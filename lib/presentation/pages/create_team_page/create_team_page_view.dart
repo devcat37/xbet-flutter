@@ -11,6 +11,7 @@ import 'package:xbet_1/internal/services/service_locator.dart';
 import 'package:xbet_1/internal/states/create_team_state/create_team_state.dart';
 import 'package:xbet_1/internal/states/subscription_state/subscription_state.dart';
 import 'package:xbet_1/internal/utils/infrastructure.dart';
+import 'package:xbet_1/main.dart';
 import 'package:xbet_1/presentation/global/player_wrapper/player_wrapper.dart';
 import 'package:xbet_1/presentation/pages/choose_players_page/choose_players_page_view.dart';
 
@@ -166,9 +167,9 @@ class CreateTeamPageView extends StatelessWidget {
             SizedBox(height: 24.h),
             _buildTeamNameInput(context),
             SizedBox(height: 24.h),
-            if (state.file.isEmpty && service<SubscriptionState>().isSubscribed) _buildChoosePhotoButton(context),
+            if (state.file.isEmpty && subscribed) _buildChoosePhotoButton(context),
             if (state.file.isNotEmpty) _buildPhoto(context),
-            if (service<SubscriptionState>().isSubscribed) SizedBox(height: 24.h),
+            if (subscribed) SizedBox(height: 24.h),
             _buildChoosePlayersButton(context),
             SizedBox(height: 24.h),
             _buildChosenPlayers(context),

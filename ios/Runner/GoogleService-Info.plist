@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>111664627740-djn6pbbkrcvd8v9b4c9b9u7hh9big5fl.apps.googleusercontent.com</string>
+	<string>775057952941-9jc43v8ohfvjs9tm219h20fl2vajfb7o.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.111664627740-djn6pbbkrcvd8v9b4c9b9u7hh9big5fl</string>
+	<string>com.googleusercontent.apps.775057952941-9jc43v8ohfvjs9tm219h20fl2vajfb7o</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA1rgVSwuM_xM7f2P7vtTTemIUD64le3S4</string>
+	<string>AIzaSyDk3MDbyyF4k5aiKzRuax63nr9DAq9QilQ</string>
 	<key>GCM_SENDER_ID</key>
-	<string>111664627740</string>
+	<string>775057952941</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.xbet</string>
+	<string>com.footclubs.ballx</string>
 	<key>PROJECT_ID</key>
-	<string>xbet-83178</string>
+	<string>xbet-football-clubs</string>
 	<key>STORAGE_BUCKET</key>
-	<string>xbet-83178.appspot.com</string>
+	<string>xbet-football-clubs.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:111664627740:ios:0562644169287530fe9fd9</string>
+	<string>1:775057952941:ios:29121452a0436f4b653624</string>
+	<key>DATABASE_URL</key>
+	<string>https://xbet-football-clubs-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

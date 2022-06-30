@@ -7,6 +7,7 @@ import 'package:xbet_1/internal/services/service_locator.dart';
 import 'package:xbet_1/internal/states/favorite_teams_state/favorite_teams_state.dart';
 import 'package:xbet_1/internal/states/subscription_state/subscription_state.dart';
 import 'package:xbet_1/internal/utils/infrastructure.dart';
+import 'package:xbet_1/main.dart';
 import 'package:xbet_1/presentation/global/favorite_team_wrapper/favorite_team_wrapper.dart';
 import 'package:xbet_1/presentation/global/logo_app_bar/logo_app_bar.dart';
 
@@ -19,7 +20,7 @@ class FavoriteTeamsPageView extends StatelessWidget {
   Widget _buildCreateTeamButton(BuildContext context) {
     return InkWell(
       onTap: () {
-        if (!subscriptionState.isSubscribed && favoriteTeamsState.teams.length >= 3) {
+        if (!subscribed && favoriteTeamsState.teams.length >= 3) {
           showCupertinoDialog(
             context: context,
             builder: (context) => CupertinoAlertDialog(
@@ -32,9 +33,9 @@ class FavoriteTeamsPageView extends StatelessWidget {
                 ),
                 CupertinoDialogAction(
                   child: const Text('Buy'),
-                  onPressed: () {
-                    subscriptionState.isSubscribed = true;
-                    pop(context);
+                  onPressed: () async {
+                    final res = await purchase();
+                    if (res) pop(context);
                   },
                 ),
               ],

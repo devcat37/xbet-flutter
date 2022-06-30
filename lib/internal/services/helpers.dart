@@ -318,17 +318,18 @@ RateMyApp rateMyApp = RateMyApp(
   preferencesPrefix: 'rateMyApp_',
   minDays: 0, // Show rate popup on first day of install.
   minLaunches: 50, // Show rate popup after 5 launches of app after minDays is passed.
-  appStoreIdentifier: '1588554686',
+  appStoreIdentifier: '1628172676',
 );
 
 void openPrivacy() async => await launchUrl(
-      Uri.parse('https://google.com'),
+      Uri.parse('https://docs.google.com/document/d/1mfLbDhNUOM_mvuPoTfQvNiA90VhtOo-c4Vft4UhaX9U/edit?usp=sharing'),
     );
 
 void openTerms() async => await launchUrl(
-      Uri.parse('https://google.com'),
+      Uri.parse('https://docs.google.com/document/d/1xCAbYrv_Q0MdCe-auzMR65Y8qqQohcj6jg36EpuXqvE/edit?usp=sharing'),
     );
 
 void openSupport() async => await launchUrl(
-      Uri.parse('https://google.com'),
+      Uri.parse(
+          'https://docs.google.com/forms/d/e/1FAIpQLScevhxm1lFQrFEwX100m6WyT-1Cs35D5bbEkzfRd86nGHS0Qg/viewform?usp=sf_link'),
     );
