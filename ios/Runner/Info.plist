@@ -41,5 +41,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>com.apple.security.files.user-selected.read-only</key>
+ 	<true/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Our app needs photos to set them as custom team images</string>
 </dict>
 </plist>
